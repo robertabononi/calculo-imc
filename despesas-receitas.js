@@ -25,9 +25,6 @@ for(let i = 0; i < usuarios.length; i++) {
     console.log(`O saldo do usuário ${usuarios[i].nome} é ${resultado}`)
 }
 
-//criar função somarNumeros(numeros)
-    //for dos numeros e somar eles
-
 function calcularSaldo(receitas, despesas) {
     let receitasSomadas =somarNumeros(receitas)
     let despesasSomadas = somarNumeros(despesas)
@@ -41,5 +38,5 @@ function somarNumeros(numeros) {
         soma = soma + numeros[i]
     }
 
-    return parseInt(soma)
+    return soma
 }
