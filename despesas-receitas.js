@@ -20,10 +20,13 @@ const usuarios = [
     }
 ]
 
-for(let i = 0; i < usuarios.length; i++) {
-    let resultado = calcularSaldo(usuarios[i].receitas, usuarios[i].despesas)
-    console.log(`O saldo do usuário ${usuarios[i].nome} é ${resultado}`)
-}
+usuarios.forEach (usuario => {
+    let resultado = calcularSaldo(usuario.receitas, usuario.despesas)
+
+    const status = (resultado >= 0) ? 'POSITIVO' : 'NEGATIVO'
+    
+    console.log(`${usuario.nome} possui saldo ${status} de ${resultado}`)
+})
 
 function calcularSaldo(receitas, despesas) {
     let receitasSomadas =somarNumeros(receitas)
@@ -34,8 +37,8 @@ function calcularSaldo(receitas, despesas) {
 
 function somarNumeros(numeros) {
     let soma = 0
-    for(let i = 0; i < numeros.length; i++) {
-        soma = soma + numeros[i]
+    for(numero of numeros) {
+        soma = soma + numero
     }
 
     return soma
