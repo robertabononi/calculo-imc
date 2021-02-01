@@ -26,5 +26,10 @@ function checarSeUsuarioUsaCSS(usuario) {
 
 for (let i = 0; i < usuarios.length; i++) {
     let resultado = checarSeUsuarioUsaCSS(usuarios[i])
-    console.log(`${usuarios[i].nome} usa CSS: ${resultado}`)
+
+    if(checarSeUsuarioUsaCSS(usuarios[i])) {
+        console.log(`O usuário ${usuarios[i].nome} trabalha com CSS`)
+    } else {
+        console.log(`O usuário ${usuarios[i].nome} não trabalha com CSS`)
+    }
 }
