@@ -51,18 +51,20 @@ function getAverageTransactionValue() {
 
 function getTransactionsCount() {
 
-    let credit = 0
-    let debit = 0
+    let count = {
+        credit: 0,
+        debit: 0
+    }
 
     for (let transaction of user.transactions) {
         if (transaction.type === "credit") {
-            credit = credit++
+            count.credit++
         } else {
-            debit= debit++
+            count.debit++
         }
     }
 
-    return {credit, debit}
+    return count
 }
 
 //
